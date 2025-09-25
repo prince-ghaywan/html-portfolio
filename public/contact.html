@@ -1,9 +1,93 @@
-<h1>Contact Me</h1>
-<p>Tel: +123456789</p>
-<p>Email: me@gmail.com</p>
-<p>Address:</p>
-<p>
-  123 North Street<br />
-  Some City<br />
-  Some Country <br />
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      max-width: 400px;
+      margin: auto;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .contact-info:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #ffcc70;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #ffe29f;
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #ffcc70;
+      color: #333;
+      font-weight: bold;
+      transition: background 0.3s ease-in-out, transform 0.2s;
+    }
+
+    button:hover {
+      background: #ffe29f;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>📞 Contact Me</h1>
+  <div class="contact-info">
+    <p><strong>Tel:</strong> +123456789</p>
+    <p><strong>Email:</strong> <a href="mailto:me@gmail.com">me@gmail.com</a></p>
+    <p><strong>Address:</strong><br>
+       123 North Street<br>
+       Some City<br>
+       Some Country
+    </p>
+    <button onclick="copyEmail()">📋 Copy Email</button>
+  </div>
+
+  <script>
+    function copyEmail() {
+      const email = "me@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("Email copied to clipboard: " + email);
+      });
+    }
+  </script>
+</body>
+</html>
