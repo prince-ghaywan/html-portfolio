@@ -1,41 +1,149 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Prince's Portfolio</title>
+    <style>
+        /* Reset default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #1f1c2c, #928dab);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-weight: 400;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: #fff;
+            margin: 30px auto;
+            width: 80%;
+            opacity: 0.4;
+        }
+
+        h3 a {
+            text-decoration: none;
+            color: #ffcc70;
+            font-size: 1.4rem;
+            transition: color 0.3s;
+        }
+
+        h3 a:hover {
+            color: #ffd700;
+        }
+
+        img {
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 10px 20px;
+            border: 2px solid #ffcc70;
+            border-radius: 25px;
+            color: #ffcc70;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background: #ffcc70;
+            color: #1f1c2c;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            img {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Prince's Portfolio</h1>
-    <h2>I'm a Java Developer </h2>
+    <h1 id="title">Prince's Portfolio</h1>
+    <h2>I'm a Java Developer</h2>
     <hr />
-    <h3><a href="./public/movie-ranking.html">Movie Ranking Project</a></h3>
+
+    <h3><a href="./public/movie-ranking.html">🎬 Movie Ranking Project</a></h3>
     <img src="./assets/images/Movieranking.png" height="200" alt="movie ranking project review" />
-    <h3><a href="./public/birthday-invite.html">Birthday Invite Project !</a></h3>
-    <img src="./assets/images/birthday.png" height="200" alt="birthday project preview"/>
+
+    <h3><a href="./public/birthday-invite.html">🎉 Birthday Invite Project</a></h3>
+    <img src="./assets/images/birthday.png" height="200" alt="birthday project preview" />
+
     <hr />
     <a href="./public/about.html">About Me</a>
     <a href="./public/contact.html">Contact Me</a>
+
+    <script>
+        // Small animation with JS
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.getElementById("title");
+            setInterval(() => {
+                title.style.color =
+                    "#" + Math.floor(Math.random() * 16777215).toString(16);
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>
-
-
-
-
