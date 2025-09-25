@@ -1,80 +1,214 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Birthday Invite</title>
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+  <meta charset="UTF-8">
+  <title>Birthday Invite</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-        body {
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-            color: #333;
-            text-align: center;
-            padding: 40px;
-        }
+    body {
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac, #ffcc70, #f6d365);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      overflow-x: hidden;
+    }
 
-        h1 {
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
-            animation: bounce 2s infinite;
-        }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #444;
-        }
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+      animation: bounce 2s infinite;
+    }
 
-        img {
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s ease;
-            max-width: 90%;
-            height: auto;
-        }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
 
-        img:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
+    img {
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s ease;
+      max-width: 90%;
+      height: auto;
+    }
 
-        h3 {
-            margin: 20px 0 10px;
-            color: #ff4081;
-        }
+    img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    h3 {
+      margin: 20px 0 10px;
+      color: #ff4081;
+    }
 
-        ul li {
-            background: #fff;
-            margin: 10px auto;
-            padding: 12px 20px;
-            border-radius: 25px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            width: fit-content;
-            transition: all 0.3s ease;
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        ul li:hover {
-            transform: scale(1.08);
-            background: #ffcccb;
-        }
+    ul li {
+      background: #fff;
+      margin: 10px auto;
+      padding: 12px 20px;
+      border-radius: 25px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      width: fit-content;
+      transition: all 0.3s ease;
+    }
 
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            border-radius: 30px;
-}
+    ul li:hover {
+      transform: scale(1.08);
+      background: #ffcccb;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #ff4081;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    a:hover {
+      background: #ff80ab;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      font-size: 2rem;
+      animation: float 6s infinite ease-in-out;
+      z-index: 5;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.8;
+      animation: fall linear forwards;
+      z-index: 10;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎂 It's My Birthday 🎂</h1>
+  <h2>On 17th October</h2>
+  <img src="https://raw.githubusercontent.com/appbrewery/webdev/main/birthday-cake3.4.jpeg" alt="Birthday Cake" />
+
+  <h3>What to Bring?</h3>
+  <ul>
+    <li>🎈 Balloons! (I love balloons)</li>
+    <li>🍰 Cake (I am really good at eating)</li>
+    <li>🍕 An appetite (There will be lots of food)</li>
+  </ul>
+
+  <h3>This is where you need to go:</h3>
+  <a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,75y,289.6h,87.01t,0.72r/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656"
+    target="_blank">📍 Google Maps Link</a>
+
+  <script>
+    // 🎈 Floating balloons
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.innerHTML = "🎈";
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.fontSize = (Math.random() * 20 + 20) + "px";
+      balloon.style.animationDuration = (Math.random() * 5 + 4) + "s";
+      document.body.appendChild(balloon);
+
+      setTimeout(() => {
+        balloon.remove();
+      }, 8000);
+    }
+    setInterval(createBalloon, 1200);
+
+    // 🎊 Confetti effect
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.backgroundColor =
+        ["#ff4081", "#ffcc00", "#00e676", "#29b6f6", "#ab47bc"][Math.floor(Math.random() * 5)];
+      confetti.style.width = confetti.style.height = Math.random() * 8 + 6 + "px";
+      confetti.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 6000);
+    }
+    setInterval(createConfetti, 150);
+  </script>
+</body>
+
+</html>
